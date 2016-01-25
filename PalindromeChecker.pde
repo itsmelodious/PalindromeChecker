@@ -16,10 +16,43 @@ public void setup()
 }
 public boolean palindrome(String word)
 {
-  for(int i = 0; i < word.length(); i++)
-    for(int j = word.length()-1; j >= 0; j--)
-      if(word.charAt(i) == word.charAt(j))
-        return true;
+  String temp = new String();
+  for (int i = word.length() - 1; i >= 0 ; i--)
+  {
+    temp += word.charAt(i);
+  }
+  if (word.equals(temp))
+    return true;
+  
+  // String space = new String();
+  // String bSpace = new String();
+  // for (int j = 0; j < word.length(); j++)
+  // {
+  //   if (word.charAt(j) != ' ')
+  //     space += word.charAt(j);
+  // }
+  // for (int k = word.length() - 1; k >= 0; k--)
+  // {
+  //   if (word.charAt(k) != ' ')
+  //     bSpace += word.charAt(k);
+  // }
+  // if (space.equals(bSpace))
+  //   return true;
+  String character = new String();
+  String bChar = new String();
+  for (int j = 0; j < word.length(); j++)
+  {
+    if (Character.isLetter(word.charAt(j)))
+      character += word.charAt(j);
+  }
+  for (int k = word.length()-1; k >= 0; k--)
+  {
+    if (Character.isLetter(word.charAt(k)))
+      bChar += word.charAt(k);
+  }
+  if (character.equals(bChar))
+    return true;
+
   return false;
 }
 
