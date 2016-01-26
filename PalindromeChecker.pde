@@ -24,20 +24,6 @@ public boolean palindrome(String word)
   if (word.equals(temp))
     return true;
   
-  // String space = new String();
-  // String bSpace = new String();
-  // for (int j = 0; j < word.length(); j++)
-  // {
-  //   if (word.charAt(j) != ' ')
-  //     space += word.charAt(j);
-  // }
-  // for (int k = word.length() - 1; k >= 0; k--)
-  // {
-  //   if (word.charAt(k) != ' ')
-  //     bSpace += word.charAt(k);
-  // }
-  // if (space.equals(bSpace))
-  //   return true;
   String character = new String();
   String bChar = new String();
   for (int j = 0; j < word.length(); j++)
@@ -52,7 +38,12 @@ public boolean palindrome(String word)
   }
   if (character.equals(bChar))
     return true;
-
+  if (noCapitals(character).equals(noCapitals(bChar)))
+    return true;
   return false;
 }
 
+public String noCapitals(String sWord)
+{
+  return sWord.toLowerCase();
+}
